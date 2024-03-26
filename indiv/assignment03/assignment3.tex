@@ -13,29 +13,37 @@
 \begin{enumerate}[label=Part \Alph*)]
     \item
     \begin{proof}[Proof]
-        By induction on $n \in \mathbb{Z}^{+}$. Remark: $\mathbb{Z}^{+}$ is the set of all positive integers; $\mathbb{Z}^{+} = \{1, 2, \ldots \}$.
+        By induction on $n \in \mathbb{Z}^{+}$. Here, we choose $\mathbb{Z}^{+}$ because it is intuitive to have a positive integer of $n \times n$ chessboard. 
+        
+        \textbf{Remark:} $\mathbb{Z}^{+}$ is the set of all positive integers; $\mathbb{Z}^{+} = \{1, 2, 3, \ldots, n\}_{n \rightarrow \infty}$.
         
         \textbf{Base Case:} $n = 1$
         
-        $S(1) = 1 \times 1$ chessboard, so there exists one cell only on that chessboard, which makes it the top-left and the bottom-left cell, where the rook starts and ends at the same cell. Hence, there exists the rook's tour.
+        $S(1) = 1 \times 1$ chessboard, so there exists one cell only on that chessboard, which makes it the top-left and the bottom-left cell, where the rook starts and ends at the same cell. Hence, there exists the rook's tour, even if $n = 1$ is a little bit trivial.
         
         \textbf{Inductive Hypothesis:} If our constructed $S(n)$ holds, then there exists some $n \in \mathbb{Z}^{+}$ such that it satisfies $S(n + 1)$ as well.
         
         \textbf{Inductive Step:} $n \rightarrow n + 1$
         
-        $S(n+1) = (n + 1) \times (n + 1)$ chessboard. By the given information on page 234 for rook's tour and rook's move, we let $(r, c, x) \in \mathbb{Z}$, then it is true that rook can start at $\langle r, c \rangle$. Then for $n \times n$ chessboard to $(n + 1) \times (n + 1)$ chessboard, there are two possible movement,
+        $S(n+1) = (n + 1) \times (n + 1)$ chessboard. By the given information on page 234 for rook's tour and rook's move, we let $(r, c, x) \in \mathbb{Z}^{+}$, then it is true that rook can start at $\langle r, c \rangle$. Then for $n \times n$ chessboard to $(n + 1) \times (n + 1)$ chessboard, there are two possible movement,
         
-        Vertical movement $\Rightarrow \langle r, c \pm x \rangle \rightarrow \langle r, n+1 \rangle$, so this means that $c \pm x = n + 1 \Leftrightarrow c = n + 1 \pm x$, where $(n + 1 \pm x) \in \mathbb{Z}^{+}$
+        Vertical movement $\Rightarrow \langle r, c \pm x \rangle \rightarrow \langle r, n+1 \rangle$, so this means that $c \pm x = n + 1 \Leftrightarrow c = n + 1 \pm x$
         
-        Horizontal movement $\Rightarrow \langle r \pm x, c \rangle \rightarrow \langle n+1, c \rangle$, so this also means that $r \pm x = n + 1 \Leftrightarrow r = n + 1 \pm x$, where $(n + 1 \pm x) \in \mathbb{Z}^{+}$
+        Horizontal movement $\Rightarrow \langle r \pm x, c \rangle \rightarrow \langle n+1, c \rangle$, so this also means that $r \pm x = n + 1 \Leftrightarrow r = n + 1 \pm x$
         
-        \textbf{Remark:} As shown above, we now know that our movement for both vertical and horizontal are both within the bounds of $\mathbb{Z}^{+}$, because whatever $x$ is, $min(r) = n$ and $min(c) = n$, and we already know that $n \in \mathbb{Z}^{+}$. Let us also remind ourselves that $\langle 1, 1 \rangle \Rightarrow $ top-left, $\langle n + 1, 1 \rangle \Rightarrow $ top-right, $\langle 1, n + 1 \rangle \Rightarrow $ bottom-left and, $\langle n + 1, n + 1 \rangle \Rightarrow $ bottom-right.
+        Now, we know that, if we let
+        $$x = min(\mathbb{Z}^{+}) = 1$$
+        and, 
+        $$min(r) = min(c) = n + 1 - x$$
+        therefore,
+		$$min(r) = min(c) = n + 1 - 1 = n$$
+        Then, our movement for both vertical and horizontal are both within the bounds of $\mathbb{Z}^{+}$, as we said above, $n \in \mathbb{Z}^{+}$. Now, let these coordinates be true that $\langle 1, 1 \rangle \Rightarrow $ top-left, $\langle n + 1, 1 \rangle \Rightarrow $ top-right, $\langle 1, n + 1 \rangle \Rightarrow $ bottom-left and, $\langle n + 1, n + 1 \rangle \Rightarrow $ bottom-right. 
         
          Now to traverse through the board, there are two possible cases:
         
-        \textbf{Case 1:} $(n + 1) \times (n + 1)$ chessboard where $(n + 1) \in \mathbb{Z}_{\text{even}}$
+        \textbf{Case $\boldsymbol{\alpha}$:} $(n + 1) \times (n + 1)$ chessboard where $(n + 1) \in \mathbb{Z}_{\text{even}}$
         
-        Then if we let rook start at $\langle 1, 1 \rangle $, we follow a horizontal ``zig-zag" pattern below:
+        Then if we let rook start at $\langle 1, 1 \rangle $, then we follow a horizontal ``zig-zag" pattern below:
         
         $(1, 1) \rightarrow (2, 1) \rightarrow \ldots \rightarrow (n, 1) \rightarrow \underbrace{(n + 1, 1)}_{\downarrow}$
         
@@ -49,9 +57,9 @@
 		
 		By this visual, we can clearly see that the rook arrives at the left side every time $c \in \mathbb{Z}_{\text{even}}$, so it is entirely possible that the rook can end up on the bottom-left side, because $c = (n + 1) \in \mathbb{Z}_{\text{even}}^{+}$.
  
-        \textbf{Case 2:} $(n + 1) \times (n + 1)$ chessboard where $(n + 1) \in \mathbb{Z}_{\text{odd}}^{+}$
+        \textbf{Case $\boldsymbol{\beta}$:} $(n + 1) \times (n + 1)$ chessboard where $(n + 1) \in \mathbb{Z}_{\text{odd}}^{+}$
         
-        Then if we let rook start at $\langle 1, 1 \rangle $, we follow a vertical ``zig-zag" pattern below:
+        Then if we let rook start at $\langle 1, 1 \rangle $, then we follow a vertical ``zig-zag" pattern below:
         
         $\underbrace{(1, 1)}_{\downarrow} \quad\;\; (2, 1) \rightarrow \underbrace{(\ldots)}_{\downarrow} \quad\;\; (n, 1) \rightarrow \underbrace{(n + 1, 1)}_{\downarrow}$
         
@@ -66,17 +74,17 @@
 		
 		By this visual, we can clearly see that whenever $r \in \mathbb{Z}_{\text{odd}}$, it will be making a downwards movement, so since $(n + 1) \in \mathbb{Z}_{\text{odd}}^{+}$, we know that $n \in \mathbb{Z}_{\text{even}}^{+}$, that means that it will be making an upwards movement so that it can turn right towards $(n + 1, 1)$ where it can start moving down again. Note that we have never really visited $c = n + 1$ for these traversal, so let it be known that, after reaching $(n + 1, n + 1)$, it can go directly to $(1, n+1)$, where the rook will be at the bottom-left of the chessboard.
         
-        $\therefore$ It must be true that the rook's tour exists for an $n \times n$ chessboard, for some $n \in \mathbb{Z}^{+}$.
+        $\therefore$ By mathematical induction, and by \textbf{Case} $\boldsymbol{\alpha}$ and $\boldsymbol{\beta}$, it is true that the rook's tour exists for the $n \times n$ chessboard, for some $n \in \mathbb{Z}^{+}$.
         
     \end{proof}
     
     \item \textbf{11.36} We know that in a simple graph,
 	$$directed \Rightarrow density = \frac{|E|}{\frac{n(n-1)}{2}} = \frac{2|E|}{n(n-1)}$$
 	$$undirected \Rightarrow density =  \frac{|E|}{n(n-1)}$$
+	Where $n$ is the vertex or node, and $|E|$ is the edges.
+	
 	As a function of n the density of an n-node path means, $|E| \Rightarrow (n - 1)$, where $n$ is vertices, so we have,
-	
 	$$f(n) = \frac{2(n-1)}{n(n-1)} = \frac{2}{n}$$
-	
 	\textbf{11.37} As a function of n the density of an n-node cycle means, $|E| \Rightarrow n$, where $n$ is vertices, so we have,
 	
 	$$f(n) = \frac{2n}{n(n-1)} = \frac{2}{n - 1}$$
@@ -123,7 +131,7 @@
 	
 	and we can see that the graph we made, $G$, consists of two disjoint sets which is absurd, because the original statement say that it is connected.
 	
-	$\therefore$ It is disproved that if $G = \langle L \cup R, E \rangle$ where $G$ is a bipartite graph with $|L| = |R|$, then it is impossible for $G$ to be a connected graph, if there is at minimum, one neighbour for every node in $L$ and $R$.
+	$\therefore$ It is disproved that if $G = \langle L \cup R, E \rangle$ where $G$ is a bipartite graph with $|L| = |R|$, then it is impossible for $G$ to be a connected graph, if there is at minimum, one neighbour for every node in $L$ and $R$.x`
     \end{proof}
 \end{enumerate}
 
