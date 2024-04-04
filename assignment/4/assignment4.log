@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.26)  4 APR 2024 14:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.26)  4 APR 2024 14:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**assignment3.tex
-(./assignment3.tex
+**assignment4.tex
+(./assignment4.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22>
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
@@ -447,8 +447,8 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count294
 \l__pdf_internal_box=\box65
 )
-(./assignment3.aux)
-\openout1 = `assignment3.aux'.
+(./assignment4.aux)
+\openout1 = `assignment4.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
@@ -501,7 +501,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-(./assignment3.aux) ) 
+(./assignment4.aux) ) 
 Here is how much of TeX's memory you used:
  13432 strings out of 476025
  270613 string characters out of 5790017
@@ -519,7 +519,7 @@ cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/
 symbols/msbm10.pfb>
-Output written on assignment3.pdf (2 pages, 86637 bytes).
+Output written on assignment4.pdf (2 pages, 86286 bytes).
 PDF statistics:
  54 PDF objects out of 1000 (max. 8388607)
  33 compressed objects within 1 object stream
