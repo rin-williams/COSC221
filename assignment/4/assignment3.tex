@@ -1,0 +1,47 @@
+\documentclass[12pt]{article}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\begin{document}
+\title{COSC221 Assignment 4}
+\author{Rin Meng \\ Student ID: 51940633}
+\maketitle
+
+
+\begin{enumerate}[label=Part \Alph*)]
+    \item Given that it is an $8 \times 8$ chessboard, it is true that, for any rook placement on the board, we have:
+    \item[-] \textbf{Total number of squares:} 64.
+    \item[-] Let $m$ be the number of ways to place the first rook, which is $64$.
+    \item[-] Since there are 1 common factor between the rows and columns, that is, where the rook is currently on, let $a$ be the number of ways to place the second rook without being able to capture each other is $64 - (8 + 8 - 1) = 64 - 15 = 49$. 
+    \item[-] Then the total number of ways to place the rooks is the product of $m$ and $a$. 
+    $$m \times a = 64 \times 49 = 3136.$$
+    
+    $\therefore$ There are 3136 ways of putting a black and a white rook on a $8 \times 8$ chessboard without them being able to capture each other.
+    
+    \item \textbf{Remark:}
+    \item[-] Sample space: $\Omega = \{(x,y) \in \mathbb{R} : 1 \leq x \leq 8, 1 \leq y \leq 8\}^2$.
+    \item[-] Events: $\epsilon = \{B.1, B.2\}$.
+    \item[-] $B.1$ is the event of the rooks to be on the same spot as another.
+    \item[-] $B.2$ is the probability for them to capture each other in the next move, given that they are in different squares.
+    \item[-] $P$ be the probability function for any $\epsilon \in \Omega$.
+    
+    \item[B.1)] It is given that $|\Omega| = 8 \times 8 = 64$ so it must be true that for any rook to be on the same spot as another, there are $64 \times 64$ cells, so then,
+    $$P(\epsilon = B.1) = \frac{64}{64 \times 64} = \frac{1}{64} = 0.015625 \simeq 1.56\%$$
+    
+    \item[B.2)] If they are in different square, then we let 
+    
+    \item[-] $P(A)$ be the probability of them being in different squares, then
+    $$P(A) = 1 - P(\epsilon = B.1) = 1 - \frac{1}{64} = \frac{63}{64}$$
+    \item[-] $P(B)$ be the probability of them being able to capture each other in the next move, then
+    $$P(B) = \frac{64 \times 14}{64 \times 64} = \frac{896}{4096} = \frac{14}{64}$$
+    Since there are 64 different ways the first rook can be placed, and there are only 14 different ways the capturing can occur given that the first rook is placed in any of those 64 cells with 64 different ways to place them.
+    \item[-] Then we also learn that $P(A \cap B) = P(B)$ because the rooks can only be captured if they are on a different square (where next move is capture).
+    \item[-] The probability of $A$ and $B$ at the same time is given by,
+    $$P(B.2) = P(B|A) = \frac{P(A \cap B)}{P(A)}$$
+    $$P(B.2) = \frac{\frac{14}{64}}{\frac{63}{64}} = \frac{14}{64} \times \frac{64}{63}= \frac{14}{63} = 0.2\bar{2} \simeq 2.2\%$$
+
+\end{enumerate}
+End of Assignment 4.
+\end{document}
